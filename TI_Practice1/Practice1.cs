@@ -6,7 +6,6 @@ namespace Practice1
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("***Practice1: Start***");
 
             int attempts = 3;
@@ -17,18 +16,26 @@ namespace Practice1
             Console.Write($"\nPlease enter a number used as a circle radius. You have {attempts} attempts: ");
 
             Validator validateRadius = new Validator(attempts);
-            radius = validateRadius.IsNumber();
+            radius = validateRadius.GetValueFromConsole();
 
             Console.Write($"\nPlease enter a number used as a square side. You have {attempts} attempts: ");
 
             Validator validateSide = new Validator(attempts);
-            side = validateSide.IsNumber();
+            side = validateSide.GetValueFromConsole();
 
-            Circle circle = new Circle(radius);
+            Circle circle = new Circle
+            {
+                Radius = radius
+            };
+
             result = Math.Round(circle.GetArea(), 2);
             Console.Write("\n\nCircle area: " + result);
 
-            Square square = new Square(side);
+            Square square = new Square
+            {
+                Side = side
+            };
+
             result = Math.Round(square.GetArea(), 2);
             Console.Write("\nSquare area: " + result);
 
@@ -36,12 +43,16 @@ namespace Practice1
             {
                 Console.Write("\nSquare can be put inside circle.");
             }
-            else
+            else if (circle.GetDiametr() <= square.Side)
             {
                 Console.Write("\nCircle can be put inside square.");
             }
+            else
+            {
+                Console.Write("\nFigures overlaps each other.");
+            }
 
-            Console.WriteLine("\n\nPlease eneter any button to finish....");
+            Console.WriteLine("\n\nPress any button to finish....");
             Console.ReadKey();
         }
     }

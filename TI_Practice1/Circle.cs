@@ -4,25 +4,23 @@ using System.Text;
 
 namespace Practice1
 {
-    class Circle
+    public class Circle
     {
-        public Circle(double val)
-        {
-            radius = val;
-        }
+        private double _radius;
 
-        readonly double radius;
-        double resp;
+        public double Radius
+        {
+            get { return _radius; }
+            set { _radius = value; }
+        }
 
         public double GetArea()
         {
-            resp = Math.PI * Math.Pow(radius, 2);
-            return resp;
+            return Math.PI * Math.Pow(_radius, 2);
         }
         public double GetDiametr()
         {
-            resp = 2 * radius;
-            return resp;
+            return 2 * _radius;
         }
     }
 }

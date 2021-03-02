@@ -4,26 +4,24 @@ using System.Text;
 
 namespace Practice1
 {
-    class Square
+   public class Square
     {
-        public Square(double val)
-        {
-            side = val;
-        }
+        private double _side;
 
-        readonly double side;
-        double resp;
+        public double Side
+        {
+            get { return _side; }
+            set { _side = value; }
+        }
 
         public double GetArea()
         {
-            resp = Math.Pow(side, 2);
-            return resp;
+            return Math.Pow(_side, 2);
         }
 
         public double GetDiagonal()
         {
-            resp = Math.Sqrt(2 * Math.Pow(side, 2));
-            return resp;
+            return Math.Sqrt(2 * Math.Pow(_side, 2));
         }
     }
 }
