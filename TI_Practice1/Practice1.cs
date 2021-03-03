@@ -21,9 +21,9 @@ namespace Practice1
             Circle circle = new Circle(radius);
 
             result = Math.Round(circle.GetArea(), 2);
-            Console.Write("\nCircle area: " + result);
+            Console.Write("Circle area: " + result);
 
-            Console.Write($"\nPlease enter a number used as a square side. You have {attempts} attempts: ");
+            Console.Write($"\n\nPlease enter a number used as a square side. You have {attempts} attempts: ");
 
             Validator validateSide = new Validator(attempts);
             side = validateSide.GetValueFromConsole();
@@ -31,19 +31,19 @@ namespace Practice1
             Square square = new Square(side);
 
             result = Math.Round(square.GetArea(), 2);
-            Console.Write("\nSquare area: " + result);
+            Console.Write("Square area: " + result);
 
             if (circle.GetDiametr() >= square.GetDiagonal())
             {
-                Console.Write("\nSquare can be put inside circle.");
+                Console.Write("\n\nSquare can be put inside circle.");
             }
             else if (circle.GetDiametr() <= square.Side)
             {
-                Console.Write("\nCircle can be put inside square.");
+                Console.Write("\n\nCircle can be put inside square.");
             }
             else
             {
-                Console.Write("\nFigures overlaps each other.");
+                Console.Write("\n\nFigures overlaps each other.");
             }
 
             Console.WriteLine("\n\nPress any button to finish....");
