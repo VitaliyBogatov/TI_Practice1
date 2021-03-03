@@ -6,21 +6,20 @@ namespace Practice1
 {
     public class Circle
     {
-        private double _radius;
+        public double Radius { get; private set; }
 
-        public double Radius
+        public Circle(double radius)
         {
-            get { return _radius; }
-            set { _radius = value; }
+            Radius = radius;
         }
 
         public double GetArea()
         {
-            return Math.PI * Math.Pow(_radius, 2);
+            return Math.PI * Math.Pow(Radius, 2);
         }
         public double GetDiametr()
         {
-            return 2 * _radius;
+            return 2 * Radius;
         }
     }
 }
