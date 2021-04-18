@@ -2,7 +2,7 @@
 
 namespace Practice1
 {
-    class Practice1
+    public class Practice1
     {
         static void Main()
         {
@@ -15,29 +15,33 @@ namespace Practice1
 
             Console.Write($"\nPlease enter a number used as a circle radius. You have {attempts} attempts: ");
 
-            Validator validateRadius = new Validator(attempts);
+            Validator validateRadius = new Validator();
+            validateRadius.Attempts = attempts;
             radius = validateRadius.GetValueFromConsole();
 
             Circle circle = new Circle(radius);
+            result = Math.Round(circle.Area, 2);
+            Console.Write("\nCircle area: " + result);
+            Console.WriteLine();
+            circle.DrawCircle();
 
-            result = Math.Round(circle.GetArea(), 2);
-            Console.Write("Circle area: " + result);
+            Console.Write($"\nPlease enter a number used as a square side. You have {attempts} attempts: ");
 
-            Console.Write($"\n\nPlease enter a number used as a square side. You have {attempts} attempts: ");
-
-            Validator validateSide = new Validator(attempts);
+            Validator validateSide = new Validator();
+            validateSide.Attempts = attempts;
             side = validateSide.GetValueFromConsole();
 
             Square square = new Square(side);
+            result = Math.Round(square.Area, 2);
+            Console.Write("\nSquare area: " + result);
+            Console.WriteLine();
+            square.DrawSquare();
 
-            result = Math.Round(square.GetArea(), 2);
-            Console.Write("Square area: " + result);
-
-            if (circle.GetDiametr() >= square.GetDiagonal())
+            if (circle.Diametr >= square.Diagonal)
             {
                 Console.Write("\n\nSquare can be put inside circle.");
             }
-            else if (circle.GetDiametr() <= square.Side)
+            else if (circle.Diametr <= square.Side)
             {
                 Console.Write("\n\nCircle can be put inside square.");
             }

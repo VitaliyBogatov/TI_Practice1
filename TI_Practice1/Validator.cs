@@ -1,38 +1,28 @@
 ﻿using System;
-using System.Globalization;
-using System.Text.RegularExpressions;
 
 namespace Practice1
 {
-    class Validator
+    public class Validator
     {
-        private readonly int _attempts;
-
-        public Validator(int attempts)
-        {
-            _attempts = attempts;
-        }
+        public int Attempts { get; set; }
 
         public double GetValueFromConsole()
         {
             int matchCount = 1;
             double val = 0;
-            while (matchCount <= _attempts)
+            while (matchCount <= Attempts)
             {
                 var input = Console.ReadLine();
                 input = input.Replace(',', '.');
-                //String pattern = @"^[1-9]\d*([\.|\,]\d+)?$$";
-                //Match m = Regex.Match(input, pattern);
 
-                //if (m.Success)
                 if (double.TryParse(input, out val) && val > 0)
                 {
                     val = Math.Round(val, 2);
                     break;
                 }
-                else if (matchCount < _attempts)
+                else if (matchCount < Attempts)
                 {
-                    Console.Write($"Only numbers greater than 0, comma or dot separators are allowed.\nPlease reenter a number. {(_attempts - matchCount)} attempt(s) left: ");
+                    Console.Write($"Only numbers greater than 0, comma or dot separators are allowed.\nPlease reenter a number. {(Attempts - matchCount)} attempt(s) left: ");
                 }
                 else
                 {

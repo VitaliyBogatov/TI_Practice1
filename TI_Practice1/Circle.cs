@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Practice1
 {
@@ -8,18 +6,43 @@ namespace Practice1
     {
         public double Radius { get; private set; }
 
+        public double Area {
+            get { return Math.PI * Math.Pow(Radius, 2); }
+        }
+
+        public double Diametr
+        {
+            get { return 2 * Radius; }
+        }
+
         public Circle(double radius)
         {
             Radius = radius;
         }
 
-        public double GetArea()
+        public void DrawCircle()
         {
-            return Math.PI * Math.Pow(Radius, 2);
-        }
-        public double GetDiametr()
-        {
-            return 2 * Radius;
+            var thickness = 0.4;
+            var symbol = "*";
+
+            double rIn = Radius - thickness, rOut = Radius + thickness;
+
+            for (double y = Radius; y >= -Radius; --y)
+            {
+                for (double x = -Radius; x < rOut; x += 0.5)
+                {
+                    double value = x * x + y * y;
+                    if (value >= rIn * rIn && value <= rOut * rOut)
+                    {
+                        Console.Write(symbol);
+                    }
+                    else
+                    {
+                        Console.Write(" ");
+                    }
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
