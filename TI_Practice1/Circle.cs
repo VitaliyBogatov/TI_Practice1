@@ -8,10 +8,7 @@ namespace Practice1
 
         public double Area => Math.PI * Math.Pow(Radius, 2);
 
-        public double Diametr
-        {
-            get { return 2 * Radius; }
-        }
+        public double Diametr => 2 * Radius;
 
         public Circle(double radius)
         {

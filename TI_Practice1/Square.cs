@@ -8,10 +8,7 @@ namespace Practice1
 
         public double Area => Math.Pow(Side, 2);
 
-        public double Diagonal
-        {
-            get { return Math.Sqrt(2 * Math.Pow(Side, 2)); }
-        }
+        public double Diagonal => Math.Sqrt(2 * Math.Pow(Side, 2));
 
         public Square(double side)
         {
