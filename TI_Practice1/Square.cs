@@ -6,10 +6,7 @@ namespace Practice1
     {
         public double Side { get; private set; }
 
-        public double Area
-        {
-            get { return Math.Pow(Side, 2); }
-        }
+        public double Area => Math.Pow(Side, 2);
 
         public double Diagonal
         {

@@ -6,9 +6,7 @@ namespace Practice1
     {
         public double Radius { get; private set; }
 
-        public double Area {
-            get { return Math.PI * Math.Pow(Radius, 2); }
-        }
+        public double Area => Math.PI * Math.Pow(Radius, 2);
 
         public double Diametr
         {

@@ -11,29 +11,32 @@ namespace Practice1
             int attempts = 3;
             double radius;
             double side;
-            double result;
 
             Console.Write($"\nPlease enter a number used as a circle radius. You have {attempts} attempts: ");
 
-            Validator validateRadius = new Validator();
-            validateRadius.Attempts = attempts;
+            Validator validateRadius = new Validator
+            {
+                Attempts = attempts
+            };
+
             radius = validateRadius.GetValueFromConsole();
 
             Circle circle = new Circle(radius);
-            result = Math.Round(circle.Area, 2);
-            Console.Write("\nCircle area: " + result);
+            Console.Write("\nCircle area: " + Math.Round(circle.Area, 2));
             Console.WriteLine();
             circle.DrawCircle();
 
             Console.Write($"\nPlease enter a number used as a square side. You have {attempts} attempts: ");
 
-            Validator validateSide = new Validator();
-            validateSide.Attempts = attempts;
+            Validator validateSide = new Validator
+            {
+                Attempts = attempts
+            };
+
             side = validateSide.GetValueFromConsole();
 
             Square square = new Square(side);
-            result = Math.Round(square.Area, 2);
-            Console.Write("\nSquare area: " + result);
+            Console.Write("\nSquare area: " + Math.Round(square.Area, 2));
             Console.WriteLine();
             square.DrawSquare();
 
