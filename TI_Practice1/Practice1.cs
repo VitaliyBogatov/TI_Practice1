@@ -4,7 +4,7 @@ namespace Practice1
 {
     public class Practice1
     {
-        static void Main()
+        public static void Main()
         {
             Console.WriteLine("***Practice1: Start***");
 
